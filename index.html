@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FusionCharts sample with bower and require</title>
+        <script  src="bower_components/requirejs/require.js"></script>
+
+        <script type="text/javascript">
+        	
+			require.config({
+				//By default load any module IDs from bower_components
+				baseUrl: 'bower_components',
+                paths: {
+	                jquery: 'jquery/dist/jquery',
+	                fusioncharts: 'fusioncharts/fusioncharts',
+	                fusionthemes: 'fusioncharts/themes/fusioncharts.theme.fint'
+			    },
+			 	shim: {
+				    'fusionthemes': {
+				    	deps: ['fusioncharts']
+				    }
+				}
+			});
+
+			require(['fusioncharts', 'fusionthemes', 'jquery'], function() {
+				// Render FusionCharts here...
+			    FusionCharts.ready(function() {
+					var chart = new FusionCharts({
+						type: "Column2D",
+						width: "600",
+						height: "350",
+						renderAt: "chartContainer",
+						dataFormat: "json",
+						dataSource: {
+						    "chart": {
+						        "caption": "Revenue",
+						        "animation": "0"
+						    },
+						    "data": [
+						        {
+						            "label": "2013",
+						            "value": "420000"
+						        },
+						        {
+						            "label": "2014",
+						            "value": "910000"
+						        },
+						        {
+						            "label": "2015",
+						            "value": "720000"
+						        }
+						    ]
+						}
+					})
+					.render();
+				});
+			});
+
+        </script>
+    </head>
+    <body>
+        <div id='chartContainer'> FusionCharts will render here... </div>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "fc-bower",
+  "authors": [
+    "Rohit Kumar <rohit@fusioncharts.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "fusioncharts": "^3.10.1",
+    "requirejs": "^2.1.22",
+    "jquery": "^2.2.1"
+  }
+}
